@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile with Tabs</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background-color: #87002a;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .logo img {
+            height: 50px;
+        }
+        .header .user {
+            display: flex;
+            align-items: center;
+        }
+        .header .user img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            margin: 20px;
+        }
+
+        /* Profile Panel */
+        .left-panel {
+            background-color: #c09768;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 250px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .left-panel img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-bottom: 10px;
+        }
+        .left-panel h2 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .left-panel .email {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .left-panel .info {
+            text-align: left;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        .left-panel .info p {
+            margin: 5px 0;
+        }
+
+        /* Tabs Section */
+        .right-section {
+            flex-grow: 1;
+            margin-left: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #87002a;
+            color: white;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .tab.active {
+            background-color: #a01c3d;
+        }
+        .tab:hover {
+            background-color: #a01c3d;
+        }
+        .tab-content {
+            display: none;
+            margin-top: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        table th {
+            background-color: #87002a;
+            color: white;
+        }
+        table td {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <img src="logo-new.png" alt="Sathyabama Logo">
+        </div>
+        <div class="user">
+            <img src="Chancellor.jpg" alt="User Image">
+            <span>YALLAPU TEJA SATYA SANDEEP</span>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Profile Panel -->
+        <div class="left-panel">
+            <img src="Profile.jpg" alt="Profile Picture">
+            <h2>YALLAPU TEJA SATYA SANDEEP</h2>
+            <p class="email">YTEJA2005@GMAIL.COM</p>
+            <div class="info">
+                <p><strong>Roll Number:</strong> 43111086</p>
+                <p><strong>Date of Birth:</strong> 17/07/2005</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Religion:</strong> Hindu</p>
+                <p><strong>Community:</strong> General/OC</p>
+                <p><strong>Mother Tongue:</strong> Telugu</p>
+                <p><strong>Nationality:</strong> Indian</p>
+                <p><strong>Stayed in Hostel?</strong> Yes</p>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'tab1')">Semester 1</div>
+                <div class="tab" onclick="openTab(event, 'tab2')">Semester 2</div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content active" id="tab1">
+                <h3>2023-2024 APR-MAY Semester - 1</h3>
+                <table>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Code</th>
+                        <th>Title</th>
+                        <th>Semester</th>
+                        <th>Examination Marks</th>
+                        <th>Internal Assessment Marks</th>
+                        <th>Total Marks</th>
+                        <th>Result</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>SCYB1101</td>
+                        <td>Chemistry</td>
+                        <td>1</td>
+                        <td>44</td>
+                        <td>39</td>
+                        <td>83</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>SCYB2101</td>
+                        <td>Chemistry Lab</td>
+                        <td>1</td>
+                        <td>20</td>
+                        <td>18</td>
+                        <td>38</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>SEEB1101</td>
+                        <td>Electrical & Electronics Engineering</td>
+                        <td>1</td>
+                        <td>40</td>
+                        <td>46</td>
+                        <td>86</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>SMTB1101</td>
+                        <td>Matrices and Calculus</td>
+                        <td>1</td>
+                        <td>40</td>
+                        <td>39</td>
+                        <td>79</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>SHSB1101</td>
+                        <td>Technical English</td>
+                        <td>1</td>
+                        <td>44</td>
+                        <td>42</td>
+                        <td>86</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>S11BLH11</td>
+                        <td>Programming in C</td>
+                        <td>1</td>
+                        <td>37</td>
+                        <td>26</td>
+                        <td>63</td>
+                        <td>Pass</td>
+                    </tr>
+                </table>
+            </div>
+            
+
+            <div class="tab-content" id="tab2">
+                <h3>2023-2024 APR-MAY Semester - 2</h3>
+                <table>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Code</th>
+                        <th>Title</th>
+                        <th>Semester</th>
+                        <th>Examination Marks</th>
+                        <th>Internal Assessment Marks</th>
+                        <th>Total Marks</th>
+                        <th>Result</th>
+                    </tr>
+                    
+                    <tr>
+                        <td>3</td>
+                        <td>SMEB2102</td>
+                        <td>Engineering Drawing and Design</td>
+                        <td>2</td>
+                        <td>32</td>
+                        <td>40</td>
+                        <td>72</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>SPHB1101</td>
+                        <td>Physics</td>
+                        <td>2</td>
+                        <td>40</td>
+                        <td>46</td>
+                        <td>86</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>SPHB2101</td>
+                        <td>Physics Lab</td>
+                        <td>2</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>43</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>SMTB1201</td>
+                        <td>Advanced Calculus and Statistics</td>
+                        <td>2</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>100</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>SCSB1201</td>
+                        <td>Data Structures</td>
+                        <td>2</td>
+                        <td>39</td>
+                        <td>45</td>
+                        <td>84</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>SCSB2201</td>
+                        <td>Data Structures Lab</td>
+                        <td>2</td>
+                        <td>38</td>
+                        <td>41</td>
+                        <td>79</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>S11BLH21</td>
+                        <td>Programming in Python</td>
+                        <td>2</td>
+                        <td>48</td>
+                        <td>36</td>
+                        <td>84</td>
+                        <td>Pass</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function openTab(evt, tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            const tabs = document.querySelectorAll('.tab');
+
+            contents.forEach(content => content.classList.remove('active'));
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -39,7 +39,15 @@
             border-radius: 50%;
             margin-right: 10px;
         }
-
+        .logout-btn {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
         /* Layout */
         .container {
             display: flex;
@@ -146,6 +154,8 @@
             <img src="Chancellor.jpg" alt="User Image">
             <span>YALLAPU TEJA SATYA SANDEEP</span>
         </div>
+        <!-- Logout Button -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
     </div>
 
     <!-- Main Container -->
@@ -746,6 +756,12 @@
 
             tabs.forEach(tab => tab.classList.remove('active'));
             evt.currentTarget.classList.add('active');
+        }
+        function logout() {
+            // Here you can handle logout actions like clearing session cookies or redirecting
+            alert('You have logged out.');
+            // Redirecting to the login page (modify the URL to your login page)
+            window.location.href = 'index.html';
         }
     </script>
 </body>

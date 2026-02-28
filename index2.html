@@ -455,7 +455,7 @@
                             <td>1</td>
                             <td>SCYB1101</td>
                             <td>Chemistry</td>
-                            <td>1</td>
+                            <td>2</td>
                             <td>50</td>
                             <td>34</td>
                             <td>Pass</td>
@@ -1389,7 +1389,13 @@
             // Redirecting to the login page (modify the URL to your login page)
             window.location.href = 'index.html';
         }
+      
+document.querySelectorAll('[id$="cae2"] table tbody tr').forEach(row => {
+    row.children[3].innerText = "2";
+});
+
     </script>
 </body>
 
 </html>
+

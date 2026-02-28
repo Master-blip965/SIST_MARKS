@@ -202,27 +202,31 @@
 
         <!-- Right Section -->
         <div class="right-section">
-            <!-- Tabs -->
-            <div class="tabs">
-                <div class="tab " onclick="openTab(event, 'cae1')">CAE 1</div>
-                <div class="tab" onclick="openTab(event, 'cae2')">CAE 2</div>
-                <div class="tab active" onclick="openTab(event, 'tab1')">Semester 1</div>
-                <div class="tab" onclick="openTab(event, 'cae3')">CAE 1</div>
-                <div class="tab" onclick="openTab(event, 'cae4')">CAE 2</div>
-                <div class="tab" onclick="openTab(event, 'tab2')">Semester 2</div>
-                <div class="tab" onclick="openTab(event, 'cae5')">CAE 1</div>
-                <div class="tab" onclick="openTab(event, 'cae6')">CAE 2</div>
-                <div class="tab" onclick="openTab(event, 'tab3')">Semester 3</div>
-                <div class="tab" onclick="openTab(event, 'cae7')">CAE 1</div>
-                <div class="tab" onclick="openTab(event, 'cae8')">CAE 2</div>
-                <div class="tab" onclick="openTab(event, 'tab4')">Semester 4</div>
+            <div class="selection-controls" style="margin-bottom:20px; display:flex; gap:15px;">
 
+                <!-- Semester Dropdown -->
+                <select id="semesterSelect" onchange="showSelected()" style="padding:8px;">
+                    <option value="">Select Semester</option>
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                    <option value="5">Semester 5</option>
 
+                </select>
+
+                <!-- Type Dropdown -->
+                <select id="typeSelect" onchange="showSelected()" style="padding:8px;">
+                    <option value="">Select Result Type</option>
+                    <option value="cae1">CAE 1</option>
+                    <option value="cae2">CAE 2</option>
+                    <option value="semester">Semester Result</option>
+                </select>
 
             </div>
 
             <!-- Tab Content -->
-            <div class="tab-content" id="cae1">
+            <div class="tab-content" id="sem1-cae1">
                 <h3>CAE 1</h3>
                 <table>
                     <thead>
@@ -285,7 +289,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="tab-content" id="cae5">
+            <div class="tab-content" id="sem3-cae1">
                 <h3>CAE 1</h3>
                 <table>
                     <thead>
@@ -358,7 +362,7 @@
                 </table>
             </div>
 
-            <div class="tab-content" id="cae6">
+            <div class="tab-content" id="sem3-cae2">
                 <h3>CAE 2</h3>
                 <table>
                     <thead>
@@ -431,7 +435,7 @@
                 </table>
             </div>
 
-            <div class="tab-content " id="cae2">
+            <div class="tab-content " id="sem1-cae2">
                 <h3>CAE 2</h3>
                 <table>
                     <thead>
@@ -495,7 +499,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="tab-content" id="cae3">
+            <div class="tab-content" id="sem2-cae1">
                 <h3>CAE 1</h3>
                 <table>
                     <thead>
@@ -550,7 +554,7 @@
                 </table>
             </div>
 
-            <div class="tab-content" id="cae4">
+            <div class="tab-content" id="sem2-cae2">
                 <h3>CAE 2 </h3>
                 <table>
                     <thead>
@@ -604,7 +608,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="tab-content" id="cae7">
+            <div class="tab-content" id="sem4-cae1">
                 <h3>CAE 1 </h3>
                 <table>
                     <thead>
@@ -679,7 +683,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="tab-content" id="cae8">
+            <div class="tab-content" id="sem4-cae2">
                 <h3>CAE 2 </h3>
                 <table>
                     <thead>
@@ -753,9 +757,152 @@
                     </tbody>
                 </table>
             </div>
+            <div class="tab-content" id="sem5-cae1">
+                <h3>Semester 5 - CAE 1</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Subject Code</th>
+                            <th>Subject Title</th>
+                            <th>CAE</th>
+                            <th>Total Marks</th>
+                            <th>Examination Marks</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>S11BLH51</td>
+                            <td>Software Engineering Design and Development</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>45</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>S11BPB51</td>
+                            <td>Augmented and Virtual Reality</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>36</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>SCSB1501</td>
+                            <td>Data Communication and Computer Networks</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>38</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>SCSB1502</td>
+                            <td>Design and Analysis of Algorithms</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>47</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>SCSCSB3030</td>
+                            <td>Programming in R</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>45</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>SECB4002</td>
+                            <td>Software Tools for Engineering Applications</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>Pass</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-content" id="sem5-cae2">
+                <h3>Semester 5 - CAE 1</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Subject Code</th>
+                            <th>Subject Title</th>
+                            <th>CAE</th>
+                            <th>Total Marks</th>
+                            <th>Examination Marks</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>S11BLH51</td>
+                            <td>Software Engineering Design and Development</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>45</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>S11BPB51</td>
+                            <td>Augmented and Virtual Reality</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>44</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>SCSB1501</td>
+                            <td>Data Communication and Computer Networks</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>42</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>SCSB1502</td>
+                            <td>Design and Analysis of Algorithms</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>47</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>SCSCSB3030</td>
+                            <td>Programming in R</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>43</td>
+                            <td>Pass</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>SECB4002</td>
+                            <td>Software Tools for Engineering Applications</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>46</td>
+                            <td>Pass</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-
-            <div class="tab-content active" id="tab1">
+            <div class="tab-content active" id="sem1-result">
 
                 <h3>2023-2024 OCT-NOV Semester - 1</h3>
                 <table>
@@ -831,7 +978,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="tab-content" id="tab2">
+            <div class="tab-content" id="sem2-result">
                 <h3>2023-2024 APR-MAY Semester - 2</h3>
                 <table>
                     <tr>
@@ -917,7 +1064,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="tab-content" id="tab3">
+            <div class="tab-content" id="sem3-result">
                 <h3>2024-2025 OCT-NOV Semester - 3</h3>
                 <table>
                     <tr>
@@ -994,7 +1141,7 @@
 
                 </table>
             </div>
-            <div class="tab-content" id="tab4">
+            <div class="tab-content" id="sem4-result">
                 <h3>2024-2025 APR-MAY Semester - 4</h3>
                 <table>
                     <tr>
@@ -1101,6 +1248,103 @@
 
                 </table>
             </div>
+
+            <div class="tab-content" id="sem5-result">
+                <h3>2025-2026 NOV-DEC Semester - 5</h3>
+                <table>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Code</th>
+                        <th>Title</th>
+                        <th>Semester</th>
+                        <th>Examination Marks</th>
+                        <th>Internal Assessment Marks</th>
+                        <th>Total Marks</th>
+                        <th>Result</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>S11BLH51</td>
+                        <td>Software Engineering Design and Development</td>
+                        <td>5</td>
+                        <td>45</td>
+                        <td>49</td>
+                        <td>94</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>SCSB1502</td>
+                        <td>Augmented and Virtual Reality</td>
+                        <td>5</td>
+                        <td>44</td>
+                        <td>44</td>
+                        <td>78</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>SCSB1501</td>
+                        <td>Data Communication and Computer Networks</td>
+                        <td>5</td>
+                        <td>42</td>
+                        <td>46</td>
+                        <td>88</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>SCSB1502</td>
+                        <td>Design and Analysis of Algorithms</td>
+                        <td>5</td>
+                        <td>47</td>
+                        <td>49</td>
+                        <td>96</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>SCSB3030</td>
+                        <td>Programming in R</td>
+                        <td>5</td>
+                        <td>43</td>
+                        <td>29</td>
+                        <td>72</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>SECB4002</td>
+                        <td>Software Tools for Engineering Applications</td>
+                        <td>5</td>
+                        <td>46</td>
+                        <td>40</td>
+                        <td>86</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>SCSB2501</td>
+                        <td>Computer Networks Lab</td>
+                        <td>5</td>
+                        <td>46</td>
+                        <td>34</td>
+                        <td>80</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>S11BPT1</td>
+                        <td>Professional Training - I</td>
+                        <td>5</td>
+                        <td>46</td>
+                        <td>49</td>
+                        <td>95</td>
+                        <td>Pass</td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
     </div>
@@ -1111,19 +1355,33 @@
 
     <!-- JavaScript -->
     <script>
-        function openTab(evt, tabName) {
-            const contents = document.querySelectorAll('.tab-content');
-            const tabs = document.querySelectorAll('.tab');
+        function showSelected() {
 
-            contents.forEach(content => {
-                content.classList.remove('active');
-                if (content.id === tabName) {
-                    content.classList.add('active');
+            const semester = document.getElementById("semesterSelect").value;
+            const type = document.getElementById("typeSelect").value;
+
+            const contents = document.querySelectorAll(".tab-content");
+            contents.forEach(content => content.classList.remove("active"));
+
+            if (semester && type) {
+
+                let targetId = "";
+
+                if (type === "cae1") {
+                    targetId = `sem${semester}-cae1`;
                 }
-            });
+                else if (type === "cae2") {
+                    targetId = `sem${semester}-cae2`;
+                }
+                else if (type === "semester") {
+                    targetId = `sem${semester}-result`;
+                }
 
-            tabs.forEach(tab => tab.classList.remove('active'));
-            evt.currentTarget.classList.add('active');
+                const targetDiv = document.getElementById(targetId);
+                if (targetDiv) {
+                    targetDiv.classList.add("active");
+                }
+            }
         }
         function logout() {
             // Here you can handle logout actions like clearing session cookies or redirecting
